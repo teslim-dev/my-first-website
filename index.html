@@ -3,89 +3,115 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Teslim | Portfolio</title>
+  <title>Teslim | Developer Portfolio</title>
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-<header class="hero">
-  <nav class="navbar">
-    <h2>Teslim</h2>
-    <div>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+  <!-- HERO SECTION -->
+  <section class="hero-content">
 
-<div class="hero-content">
+    <h1>Hi, I'm Teslim 👋</h1>
 
-  <h1>Hi, I'm <span class="typing">Teslim</span> 👋</h1>
+    <p class="subtitle">
+      Frontend Developer in training building modern, responsive websites.
+    </p>
 
-  <p>A Frontend Developer in Training</p>
+    <p id="intro">
+     I am a frontend developer in training, passionate about building responsive and modern web applications. Open to internships and collaborations 🚀
+    </p>
 
-  <a href="#projects" class="btn">View My Work</a>
-
-  <div class="socials">
-    <a class="btn" href="https://github.com/" target="_blank">GitHub</a>
-    <a class="btn" href="https://wa.me/2349061874459" target="_blank">WhatsApp</a>
-  </div>
-
-</div>
-</header>
-
-<section id="about" class="card">
-  <h2>About Me</h2>
-  <p>
-    I’m a passionate frontend developer learning modern web development.
-    I enjoy building clean, responsive, and interactive websites.
-  </p>
-</section>
-
-<section id="skills" class="card">
-  <h2>Skills</h2>
-  <div class="grid">
-    <div class="box">HTML</div>
-    <div class="box">CSS</div>
-    <div class="box">JavaScript</div>
-  </div>
-</section>
-
-<section id="projects" class="card">
-  <h2>Projects</h2>
-
-  <div class="project-grid">
-
-    <div class="project-card">
-      <img src="https://via.placeholder.com/300x180" alt="Project 1">
-      <h3>Portfolio Website</h3>
-      <p>My first responsive portfolio built with HTML & CSS.</p>
+    <div class="hero-buttons">
+      <button class="btn" onclick="toggleMode()">Toggle Theme 🌗</button>
+      <button class="btn" onclick="changeText()">Click Me 🚀</button>
+      <a href="cv.pdf" class="btn" download>Download CV 📄</a>
     </div>
 
-    <div class="project-card">
-      <img src="https://via.placeholder.com/300x180" alt="Project 2">
-      <h3>Portfolio Website</h3>
-      <p>A responsive portfolio built using HTML, CSS and deployed online.</p>
+    <div class="socials">
+    <a class="btn" href="https://github.com/teslim-dev" target="_blank">GitHub</a>
+    <a class="btn" href="https://wa.me/2348012345678" target="_blank">WhatsApp</a>
+    </div>
+  </section>
+
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="card">
+
+    <h2>Projects</h2>
+
+    <div class="project-grid">
+
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200" alt="Project 1">
+        <h3>Personal Portfolio</h3>
+        <p>A responsive developer portfolio built with HTML, CSS and JavaScript.</p>
+        <a href="https://github.com/" target="_blank" class="btn">View Project</a>
+      </div>
+
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200" alt="Project 2">
+        <h3>Landing Page Design</h3>
+        <p>A modern landing page layout practice project.</p>
+        <a href="https://github.com/" target="_blank" class="btn">View Project</a>
+      </div>
+
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200" alt="Project 3">
+        <h3>UI Practice Project</h3>
+        <p>Basic UI components built to improve frontend skills.</p>
+        <a href="https://github.com/" target="_blank" class="btn">View Project</a>
+      </div>
+
     </div>
 
-  </div>
-</section>
+  </section>
 
-<section id="contact" class="card">
-  <h2>Contact Me</h2>
-  <p>I’m open to learning opportunities and collaborations.</p>
-  <p>Email: jimohteslim2016@gmail.com</p>
-</section>
 
-<footer>
-  <p>© 2026 Teslim. Built with love 💙</p>
-</footer>
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="card">
 
-<a href="https://wa.me/2349061874459" class="whatsapp" target="_blank">
-  💬
-</a>
+    <h2>Contact Me</h2>
+
+    <p>I’m currently open to learning opportunities and collaborations.</p>
+    <p>Email: jimohteslim2016@gmail.com</p>
+    <p>Location: Lagos, Nigeria</p>
+
+  </section>
+
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/2349061874459" class="whatsapp" target="_blank">
+    💬
+  </a>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+    function changeText() {
+  document.getElementById("intro").innerText =
+    "You just controlled the website with JavaScript 🔥";
+}
+
+// DARK MODE TOGGLE
+function toggleMode() {
+  document.body.classList.toggle("light-mode");
+
+  if (document.body.classList.contains("light-mode")) {
+    localStorage.setItem("theme", "light");
+  } else {
+    localStorage.setItem("theme", "dark");
+  }
+}
+
+// KEEP MODE AFTER REFRESH
+window.onload = function () {
+  if (localStorage.getItem("theme") === "light") {
+    document.body.classList.add("light-mode");
+  }
+};
+  </script>
 
 </body>
 </html>
